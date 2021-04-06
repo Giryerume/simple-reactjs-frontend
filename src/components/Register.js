@@ -12,7 +12,8 @@ export default class Register extends Component {
             email: this.email,
             cpf: this.cpf,
             pis: this.pis,
-            password: this.password
+            password: this.password,
+            confirm: this.confirm
         }
 
         axios.post('users', data)
@@ -77,6 +78,11 @@ export default class Register extends Component {
                 <div className="form-group">
                     <input type="password" className="form-control" placeholder="Senha"
                         onChange={e => this.password = e.target.value} />
+                </div>
+
+                <div className="form-group">
+                    <input type="password" className="form-control" placeholder="Confirmar Senha"
+                        onChange={e => this.confirm = e.target.value} />
                 </div>
 
                 <button className="btn btn-primary btn-block" type="submit">Cadastrar</button>
